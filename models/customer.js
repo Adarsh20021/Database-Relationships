@@ -46,7 +46,7 @@ const findCustomer = async()=>{
   let result = await Customer.find({}).populate("orders");
   console.log(result[0]);
 };
-findCustomer();
+// findCustomer();
 
 // const addOrders = async()=>{
 //   let res = await Order.insertMany([
@@ -77,4 +77,11 @@ const addCust = async()=>{
   console.log("Added new Customer!");
 };
 
-addCust();
+// addCust();
+
+const delCust = async()=>{
+  let data = await Customer.findByIdAndDelete("6a6d84399657b19b16e58793");
+  console.log(data);
+}
+
+delCust();
